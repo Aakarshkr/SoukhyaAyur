@@ -24,26 +24,25 @@ const Testimonials = () => {
       location: 'Kerala, India',
     },
     {
-        name : 'Akarsh K R',
-        feedback : 'Nice place where the hospital is located, I love the place and treatment also',
-        location: 'Kerala, India'
-    }
+      name: 'Akarsh K R',
+      feedback: 'Nice place where the hospital is located, I love the place and treatment also',
+      location: 'Kerala, India',
+    },
   ];
 
   return (
     <section id="testimonials" className="py-16 bg-white">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-green-800 mb-8">What Our Clients Say</h2>
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-8">What Our Clients Say</h2>
         <Swiper
           modules={[Pagination, Navigation, Autoplay, EffectCoverflow]}
-          spaceBetween={30}
-          slidesPerView={3}
+          spaceBetween={15}
+          slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 7000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
-          navigation
           pagination={{ clickable: true }}
           effect="coverflow"
           coverflowEffect={{
@@ -52,6 +51,23 @@ const Testimonials = () => {
             depth: 100,
             modifier: 1,
             slideShadows: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+              navigation: false, // Disable navigation on smaller screens
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween:20 ,
+              navigation: true, // Enable navigation for tablet and larger
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              navigation: true, // Enable navigation for desktop
+            },
           }}
           className="testimonial-swiper"
         >
