@@ -10,8 +10,9 @@ const Chatbox = () => {
 
   const chatEndRef = useRef(null); // Ref for auto-scrolling
 
-  // Option Handlers
   const handleOptionClick = (option) => {
+    if (!option) return;
+
     setMessages((prev) => [...prev, { type: "user", text: option }]);
     setLoading(true);
 
@@ -87,7 +88,6 @@ const Chatbox = () => {
     }, 1000);
   };
 
-  // Scroll to bottom whenever messages update
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
@@ -96,7 +96,9 @@ const Chatbox = () => {
     <div className="z-10 relative">
       {/* Chatbox Toggle Button */}
       <div
-        className="fixed bottom-4 right-4 bg-green-600 text-white p-3 rounded-full cursor-pointer shadow-lg hover:bg-green-700 transition"
+        className={`fixed bottom-4 right-4 bg-green-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:bg-green-700 transition-all ${
+          isOpen ? "animate-bounce" : ""
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? "×" : "💬"}
@@ -104,7 +106,11 @@ const Chatbox = () => {
 
       {/* Chatbox Window */}
       {isOpen && (
-        <div className="fixed bottom-16 right-4 w-80 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <div
+          className={`fixed ${
+            isOpen ? "animate-slide-in" : "animate-slide-out"
+          } bottom-16 right-4 w-full max-w-md bg-white border border-gray-300 rounded-lg shadow-lg md:w-80`}
+        >
           {/* Header */}
           <div className="bg-green-600 text-white p-3 rounded-t-lg text-center font-bold">
             Soukhya Ayurveda Chat Support
