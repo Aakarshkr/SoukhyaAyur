@@ -38,10 +38,10 @@ const HomePage = () => {
 
         
 
-        {/* Shop Section */}
+        {/* Shop Section
         <section id="shop" className="bg-gray-50 ">
           <ShopSection />
-        </section>
+        </section> */}
 
        
 
