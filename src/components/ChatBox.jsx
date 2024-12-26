@@ -12,13 +12,13 @@ const Chatbox = () => {
 
   const handleOptionClick = (option) => {
     if (!option) return;
-
+  
     setMessages((prev) => [...prev, { type: "user", text: option }]);
     setLoading(true);
-
+  
     setTimeout(() => {
       let botResponse = { text: "I'm sorry, I couldn't find an answer." };
-
+  
       switch (option.toLowerCase()) {
         case "booking":
           botResponse = {
@@ -26,67 +26,68 @@ const Chatbox = () => {
             options: ["How to book", "Check availability"],
           };
           break;
-
+  
         case "location":
           botResponse = {
             text: "We are located in Vaniyamkulam, Palakkad, Kerala. Would you like directions or more info?",
             options: ["Directions", "More info"],
           };
           break;
-
+  
         case "about us":
           botResponse = {
             text: "We are a traditional Ayurvedic center offering treatments and wellness services. Would you like to know about facilities or contact info?",
             options: ["Facilities", "Contact Info"],
           };
           break;
-
+  
         case "how to book":
           botResponse = {
             text: "To book an appointment, please call us at +91 9633072907 or email info@ayursowkya.com.",
           };
           break;
-
+  
         case "check availability":
           botResponse = {
             text: "Please call us at +91 9633072907 for availability.",
           };
           break;
-
+  
         case "directions":
           botResponse = {
             text: "We are located at AyurSowkya, Vaniyamkulam, Palakkad, Kerala. You can find us on Google Maps.",
           };
           break;
-
+  
         case "more info":
           botResponse = {
             text: "Our hospital offers traditional Ayurvedic treatments. Visit our website for more details.",
           };
           break;
-
+  
         case "facilities":
           botResponse = {
             text: "We provide Panchakarma Therapy, Yoga & Meditation, and an Ayurvedic Pharmacy.",
           };
           break;
-
+  
         case "contact info":
           botResponse = {
             text: "You can contact us at +91 9633072907 or email info@ayursowkya.com.",
           };
           break;
-
+  
         default:
           botResponse = {
-            text: "I'm sorry, I couldn't understand that. Please try again.",
+            text: "I'm sorry, I couldn't understand that. Please contact us at +91 9633072907 or email info@ayursowkya.com for assistance.",
           };
       }
-
+  
       setMessages((prev) => [...prev, { type: "bot", text: botResponse.text, options: botResponse.options }]);
       setLoading(false);
     }, 1000);
   };
+  
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
