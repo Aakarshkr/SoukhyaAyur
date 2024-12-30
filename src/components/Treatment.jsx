@@ -6,13 +6,13 @@ const treatments = [
     name: "ABHYANGAM",
     description:
       "Imparts softness, strength, and complexion to the body. Reduces aging, nourishes the body, and improves longevity.",
-    img: assets.abhayangam,
+    img: ,
   },
   {
     name: "SHIRODHARA",
     description:
       "Helps with insomnia, headaches, hair fall, paralysis, and mental fatigue. Promotes relaxation and calmness.",
-    img: assets.shirodhara,
+    img:,
   },
   {
     name: "KIZHI",
