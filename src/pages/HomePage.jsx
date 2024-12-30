@@ -25,10 +25,6 @@ const HomePage = () => {
         </section>
 
 
-        {/* Treatments Section */}
-        <section id="treatments" className="">
-          <Treatment />
-        </section>
 
 
         {/* Ayurvedic Lifestyle Section */}
