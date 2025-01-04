@@ -9,6 +9,7 @@ import Faqs from "../components/Faqs";
 import Testimonials from "../components/Testimonial";
 import Enquire from "../components/Enquire";
 import Footer from "../components/Footer";
+import Conditions from "../components/Conditions";
 
 const HomePage = () => {
   return (
@@ -26,6 +27,10 @@ const HomePage = () => {
 
 
 
+ {/* Ayurvedic Lifestyle Section */}
+ <section id="conditions-treated" className="bg-gray-50 ">
+          <Conditions/>
+        </section>
 
         {/* Ayurvedic Lifestyle Section */}
         <section id="ayurvedic-lifestyle" className="bg-gray-50 ">
