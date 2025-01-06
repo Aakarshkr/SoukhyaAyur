@@ -8,6 +8,7 @@ import ContactUs from "./pages/ContactUs";
 import FacilitiesPage from "./pages/FacilitiesPage";
 import About from "./pages/About";
 import Footer from "./components/Footer";
+import Gallery from "./pages/Gallery";
 
 function App() {
   const [cookies, setCookie] = useCookies(["cookieConsent"]);
@@ -33,6 +34,8 @@ function App() {
           <Route path="/facilities" element={<FacilitiesPage />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+
         </Routes>
       </div>
 
